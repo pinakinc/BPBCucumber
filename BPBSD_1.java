@@ -6,7 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class BPB_1{
+public class BPBSD_1{
 	@Before
 	public void setUp() {
 		System.out.println("Before  any of the methods");
