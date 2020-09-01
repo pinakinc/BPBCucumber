@@ -7,7 +7,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class BPB_2 {
+public class BPBSD_2 {
 	
 	@Then("^Verify that following users are able to Login$")
 	public void verify_that_following_users_are_able_to_Login(DataTable loginDetails) throws Throwable {
