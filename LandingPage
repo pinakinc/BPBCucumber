@@ -1,0 +1,14 @@
+package pageobjects;
+
+import org.openqa.selenium.By;
+
+import singletondriver.SingletonDriver;
+
+public class LandingPage extends AbstractBasePage{
+	By btnLogin = By.xpath("//a[@href='https://ui.freecrm.com']");
+	
+	public LoginPage clickLogin() {
+		SingletonDriver.getInstance().getDrvr().findElement(btnLogin).click();
+		return new LoginPage();
+	}
+}
