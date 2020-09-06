@@ -30,8 +30,6 @@ public class GLOBAL_DATA {
 	    public static final int TIMEOUT_MNT = 60;
 	    public static final int TIMEOUT_SCND = 1;
 	    public static final int TIMEOUT_ZR = 0;
-	    
+        public static final String URL="http://freecrm.co.in";	    
 	    
 	}
-
-
