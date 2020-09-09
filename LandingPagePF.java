@@ -4,8 +4,6 @@ package pageobjectspf;
 import org.openqa.selenium.support.PageFactory;
 
 import locators.LandingPageLocators;
-import pageobjects.AbstractBasePage;
-import pageobjects.AbstractBasePagePF;
 import singletondriver.SingletonDriver;
 
 public class LandingPagePF extends AbstractBasePagePF{
