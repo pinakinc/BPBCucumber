@@ -23,7 +23,7 @@ public class LandingPagePF extends AbstractBasePagePF{
 
 	public void clickLogin() {
 		System.out.println("Before click"+this.landingpageLocators.btnLogin.getText());
-		this.landingpageLocators.btnLogin.click();
+		landingpageLocators.btnLogin.click();
 		System.out.println("After click");
 	}
 
