@@ -11,7 +11,7 @@ import locators.LoginPageLocators;
 import pageobjects.AbstractBasePage;
 import singletondriver.SingletonDriver;
 
-public class HomepagePF extends AbstractBasePage{
+public class HomepagePF extends AbstractBasePagePF{
 
 	HomepageLocators homepageLocators;
 	
