@@ -1,19 +1,16 @@
 package pageobjectspf;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 
-import locators.LandingPageLocators;
 import locators.LoginPageLocators;
-import pageobjects.AbstractBasePage;
 import singletondriver.SingletonDriver;
 
-public class LoginPagePF extends AbstractBasePage{
+public class LoginPagePF extends AbstractBasePagePF{
 	LoginPageLocators loginpageLocators;
 	
 	public LoginPagePF() {
 		super();
-		this.loginpageLocators = new LoginPageLocators();
+		loginpageLocators = new LoginPageLocators();
 		PageFactory.initElements(SingletonDriver.getInstance().getDrvr(), loginpageLocators);
 	}
 
