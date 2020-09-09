@@ -17,7 +17,7 @@ public class HomepagePF extends AbstractBasePage{
 	
 	public HomepagePF() {
 		super();
-		this.homepageLocators = new HomepageLocators();
+		homepageLocators = new HomepageLocators();
 		PageFactory.initElements(SingletonDriver.getInstance().getDrvr(), homepageLocators);
 	}
 
