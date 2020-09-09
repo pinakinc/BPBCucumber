@@ -1,14 +1,9 @@
 package pageobjectspf;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import cucumber.api.java.After;
 import locators.HomepageLocators;
-import locators.LandingPageLocators;
-import locators.LoginPageLocators;
-import pageobjects.AbstractBasePage;
 import singletondriver.SingletonDriver;
 
 public class HomepagePF extends AbstractBasePagePF{
