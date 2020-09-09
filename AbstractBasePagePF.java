@@ -1,4 +1,4 @@
-package pageobjects;
+package pageobjectspf;
 
 import constants.GLOBAL_DATA;
 import pageobjectspf.LandingPagePF;
