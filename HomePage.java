@@ -17,13 +17,12 @@ public class Homepage extends AbstractBasePage{
 		Assert.assertEquals(SingletonDriver.getInstance().getDrvr().findElement(userDisplay).getText(), userDisplayText);
 	}
 	
-//	@After
-//	public void logOut() {
-//		SingletonDriver.getInstance().getDrvr().findElement(logOutDiv).click();
-//		SingletonDriver.getInstance().getDrvr().findElement(logOutSpan).click();
+	public void logOut() {
+		SingletonDriver.getInstance().getDrvr().findElement(logOutDiv).click();
+		SingletonDriver.getInstance().getDrvr().findElement(logOutSpan).click();
 //		SingletonDriver.getInstance().getDrvr().close();
 //		SingletonDriver.getInstance().getDrvr().quit();
-//	}
+	}
 
 	@Override
 	public void setPageTitle(String title) {
