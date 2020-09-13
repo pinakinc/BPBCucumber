@@ -9,9 +9,11 @@ public class HomePageStepDefPF {
 	@Then("^The user should be shown \"(.*?)\" on top left corner$")
 	public void user_should_be_shown_User_Name_on_top_left_corner(String userDisplayText) throws Throwable {
 		System.out.println("UserName verified");
-		homePagePF.verifyUser(userDisplayText);
+		homePagePF = homePagePF.verifyUser(userDisplayText);
+		homePagePF.logOut();
 	}
 	
 	
 
 }
+
