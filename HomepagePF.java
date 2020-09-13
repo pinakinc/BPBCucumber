@@ -3,6 +3,7 @@ package pageobjectspf;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import cucumber.api.java.After;
 import locators.HomepageLocators;
 import singletondriver.SingletonDriver;
 
@@ -17,17 +18,15 @@ public class HomepagePF extends AbstractBasePagePF{
 	}
 
 	
-	public void verifyUser(String userDisplayText) {
-		System.out.println(homepageLocators.userDisplay.getText());
+	public HomepagePF verifyUser(String userDisplayText) {
 		Assert.assertEquals(homepageLocators.userDisplay.getText(), userDisplayText);
+		return new HomepagePF();
 	}
 	
-	//@After
 	public void logOut() {
 		homepageLocators.logOutDiv.click();
 		homepageLocators.logOutSpan.click();
-		SingletonDriver.getInstance().getDrvr().close();
-		SingletonDriver.getInstance().getDrvr().quit();
+
 	}
 
 	@Override
