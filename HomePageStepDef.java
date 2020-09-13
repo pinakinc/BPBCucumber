@@ -9,6 +9,7 @@ public class HomePageStepDef {
 	public void user_should_be_shown_User_Name_on_top_left_corner(String userDisplayText) throws Throwable {
 		System.out.println("UserName verified");
 		homePage.verifyUser(userDisplayText);
+		homePage.logOut();
 	}
 	
 	
