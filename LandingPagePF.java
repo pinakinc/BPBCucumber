@@ -1,12 +1,16 @@
 package pageobjectspf;
 
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 
 import locators.LandingPageLocators;
 import singletondriver.SingletonDriver;
+import utils.LoggerUtil;
 
 public class LandingPagePF extends AbstractBasePagePF{
+	
+	Logger logger = LoggerUtil.getCustomLogger(LandingPagePF.class);
 	
 	LandingPageLocators landingpageLocators;
 	
@@ -16,13 +20,12 @@ public class LandingPagePF extends AbstractBasePagePF{
 		super();
 		landingpageLocators = new LandingPageLocators();
 		PageFactory.initElements(SingletonDriver.getInstance().getDrvr(), landingpageLocators);
-		System.out.println("After init");
 	}
 
 	public void clickLogin() {
-		System.out.println("Before click"+this.landingpageLocators.btnLogin.getText());
+		logger.info("Clicking Login button on Landing page");
 		landingpageLocators.btnLogin.click();
-		System.out.println("After click");
+		
 	}
 
 	@Override
