@@ -1,12 +1,13 @@
 package pageobjectspf;
 
+import org.testng.asserts.SoftAssert;
+
 import constants.GLOBAL_DATA;
 import pageobjectspf.LandingPagePF;
 import singletondriver.SingletonDriver;
 
 public abstract class AbstractBasePagePF {
 	protected String pageTitle; 
-	
 	 
 	public LandingPagePF navigateURL() {
 		SingletonDriver.getInstance().getDrvr().navigate().to(GLOBAL_DATA.URL);
