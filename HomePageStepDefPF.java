@@ -13,7 +13,11 @@ public class HomePageStepDefPF {
 		homePagePF.logOut();
 	}
 	
-	
+	@Then("^The user should be shown \"([^\"]*)\" for the account type$")
+	public void the_user_should_be_shown_for_the_account_type(String acctType) throws Throwable {
+		System.out.println("Account type verified");
+		homePagePF = homePagePF.verifyAccountType(acctType);
+		homePagePF.logOut();
+	}	
 
 }
-
