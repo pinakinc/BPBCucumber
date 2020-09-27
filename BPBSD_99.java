@@ -15,12 +15,13 @@ public class BPBSD_99 {
 	@After
 	public void tearDown(Scenario scenario) {
 		System.out.println("In teardown");
-		if (scenario.isFailed()) {
+			if (scenario.isFailed()) {
 			System.out.println("In teardown failure");
 			byte[] screenPrint = ((TakesScreenshot)SingletonDriver.getInstance().getDrvr()).getScreenshotAs(OutputType.BYTES);
 			scenario.embed(screenPrint, "image/png");
+			
 		}
-
+		
 		try {
 			if (!(SingletonDriver.getInstance().getSessId()==null)) {
 			SingletonDriver.getInstance().getDrvr().close();
