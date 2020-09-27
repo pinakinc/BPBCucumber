@@ -1,6 +1,6 @@
-#Sample Feature Definition Template
+#Sample Feature to show tags and tag inheritance
 @FunctionalSuite
-Feature: Title of your feature
+Feature: Multiple Scenarios with inheritance
   I want to use this template for my feature file
 
   @Smoke
@@ -24,7 +24,7 @@ Feature: Title of your feature
     Given I want to execute "Smoke/Regression" test
   
     
-      @Regression @FilterTest
+  @Regression @FilterTest
   Scenario: Regression/Filter Test 1
     Given I want to execute "Regression/Filter Test 1" test
     
