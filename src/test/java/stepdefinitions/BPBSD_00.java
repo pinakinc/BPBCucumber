@@ -16,7 +16,7 @@ import singletondriver.SingletonDriver;
 import utils.CucumberCustomReporter;
 import utils.GenericHelper;
 
-public class BPBSD_00 {
+public class BPBSD_00 extends BaseSteps{
 /*	@Given("^I open the \"([^\"]*)\" browser on \"([^\"]*)\" and \"([^\"]*)\"$")
 	public void i_open_the_browser(String browserName, String platform, String gridSetting) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
@@ -29,9 +29,9 @@ public class BPBSD_00 {
 
 	}
 */
-	private static CucumberCustomReporter cucumberCustomReporter;
-	private static boolean isReportRunning;
-	private static GenericHelper genericHelper = new GenericHelper();
+//	private static CucumberCustomReporter cucumberCustomReporter;
+//	private static boolean isReportRunning;
+//	private static GenericHelper genericHelper = new GenericHelper();
 	@Before
 	public void setUp(Scenario scenario) {
 		System.out.println("Before  any of the methods");
@@ -41,7 +41,7 @@ public class BPBSD_00 {
 		}
 	}
 	
-	@After
+/*	@After
 	public void tearDown(Scenario scenario) throws IOException {
 		System.out.println("After all methods");
 		File screenPrint = null;
@@ -51,13 +51,38 @@ public class BPBSD_00 {
 			//screenPrint=((TakesScreenshot)SingletonDriver.getInstance().getDrvr()).getScreenshotAs(OutputType.FILE);
 			genericHelper.takeScreenShot(screenshotName);
 			
+			//Added on 28-SEPT-2020
+			byte[] screenPrint1 = ((TakesScreenshot)SingletonDriver.getInstance().getDrvr()).getScreenshotAs(OutputType.BYTES);
+			scenario.embed(screenPrint1, "image/png");
+			try {
+				if (!(SingletonDriver.getInstance().getSessId()==null)) {
+				SingletonDriver.getInstance().getDrvr().close();
+				SingletonDriver.getInstance().getDrvr().quit();
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 			
+			
+		} else {
+			try {
+				if (!(SingletonDriver.getInstance().getSessId()==null)) {
+				SingletonDriver.getInstance().getDrvr().close();
+				SingletonDriver.getInstance().getDrvr().quit();
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//Added on 28-SEPT-2020
 		}
 //		FileUtils.copyFile(screenPrint, new File(screenshotName));
 		cucumberCustomReporter.createTest(scenario, screenshotName);
 		cucumberCustomReporter.writeReport();
 		
 	}
-
+*/
 
 }
