@@ -11,7 +11,7 @@ import singletondriver.SingletonDriver;
 
 public class GenericHelper {
 	
-	public String takeScrenShot(String aDir,String bFileName){
+	public String takeScreenShot(String aDir,String bFileName){
 		/*
 		 * If dir is present , then save the screen shot in the given dir
 		 * Create the dir, take the screen shot and save the screen shot in the dir
