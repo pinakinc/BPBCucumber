@@ -42,7 +42,8 @@ public class BPBSD_99 extends BaseSteps{
 	public void tearDown1(Scenario scenario) throws IOException {
 		System.out.println("After all methods");
 		File screenPrint = null;
-		String screenshotName = "D:\\Data\\Log\\"+scenario.getName().replaceAll(" ", "")+".jpeg";
+		//String screenshotName = "D:\\Data\\Log\\"+scenario.getName().replaceAll(" ", "")+".jpeg";
+		String screenshotName = System.getProperty("user.dir")+"\\src\\test\\resources\\images\\"+scenario.getName().replaceAll(" ", "")+".jpeg";
 		System.out.println(screenshotName);
 		if (scenario.isFailed()){
 			//screenPrint=((TakesScreenshot)SingletonDriver.getInstance().getDrvr()).getScreenshotAs(OutputType.FILE);
