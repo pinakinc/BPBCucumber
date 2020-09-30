@@ -36,7 +36,7 @@ public class BPBSD_00 extends BaseSteps{
 	public void setUp(Scenario scenario) {
 		System.out.println("Before  any of the methods");
 		if(!isReportRunning) {
-			cucumberCustomReporter=new CucumberCustomReporter("D:\\Data\\Log\\TestReport.html");
+			cucumberCustomReporter=new CucumberCustomReporter("src/test/resources/TestReport.html");
 			isReportRunning = true;
 		}
 	}
