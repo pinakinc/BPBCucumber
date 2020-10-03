@@ -3,12 +3,14 @@ package stepdefinitions;
 import cucumber.api.java.en.Then;
 import pageobjects.Homepage;
 import pageobjectspf.HomepagePF;
+import utils.ExtentTstClass;
 
 public class HomePageStepDefPF {
 	HomepagePF homePagePF = new HomepagePF();
 	@Then("^The user should be shown \"(.*?)\" on top left corner$")
 	public void user_should_be_shown_User_Name_on_top_left_corner(String userDisplayText) throws Throwable {
 		System.out.println("UserName verified");
+		ExtentTstClass.logInfo("Verifying user text");
 		homePagePF = homePagePF.verifyUser(userDisplayText);
 		homePagePF.logOut();
 	}
@@ -16,6 +18,7 @@ public class HomePageStepDefPF {
 	@Then("^The user should be shown \"([^\"]*)\" for the account type$")
 	public void the_user_should_be_shown_for_the_account_type(String acctType) throws Throwable {
 		System.out.println("Account type verified");
+		ExtentTstClass.logInfo("Verifying account type");
 		homePagePF = homePagePF.verifyAccountType(acctType);
 		homePagePF.logOut();
 	}	
