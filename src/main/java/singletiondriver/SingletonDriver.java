@@ -1,6 +1,7 @@
 package singletondriver;
 
 import java.io.FileInputStream;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -23,7 +24,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class SingletonDriver {
 	    // local variables are initialized
 	    private static SingletonDriver instance = null;
-	    private static final int IMPLCT_TIMEOUT = 0;
+	    private static final int IMPLCT_TIMEOUT = 60;
 
 	    private ThreadLocal<WebDriver> webDriver =
 	        new ThreadLocal<WebDriver>();
@@ -38,6 +39,7 @@ public class SingletonDriver {
 
 	    private String getEnv = null;
 	    private Properties props = new Properties();
+		private String remoteHubURL="http://192.168.0.20:4444/wd/hub";
 
 	    // Private constructor in order to block instantiation of this class from outside
 	    private SingletonDriver() {
@@ -74,6 +76,7 @@ public class SingletonDriver {
 
 	        DesiredCapabilities caps = null;
 	        String getPltfrm = null;
+	        
 	        props.load(new FileInputStream(GLOBAL_DATA.SE_PROPRTS));
 
 	        switch (brwsr) {
@@ -126,7 +129,7 @@ public class SingletonDriver {
 	                	WebDriverManager.chromedriver().setup();
 	                    webDriver.set(new 
 	                    ChromeDriver(chOptions.merge(caps)));
-	                }
+	                } 
 
 	                break;
 	            case "internet explorer":
@@ -149,6 +152,11 @@ public class SingletonDriver {
 
 	                break;
 	        }
+	        
+	        if ( envrnmnt.equalsIgnoreCase("grid") ) {
+	        	webDriver.set(new RemoteWebDriver(new URL(remoteHubURL),caps));
+            }
+
 
 	        getEnv = envrnmnt;
 	        getPltfrm = pltfrm;
